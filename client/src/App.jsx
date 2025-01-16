@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Ethan, Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -9,7 +9,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 
 export default function App() {
     return (
-        <Router>
+        <Ethan>
             <Routes>
                 {/* PUBLIC ROUTES */}
                 <Route path="/" element={<Home />} />
@@ -27,6 +27,6 @@ export default function App() {
                 >
                 </Route>
             </Routes>
-        </Router>
+        </Ethan>
     )
 }

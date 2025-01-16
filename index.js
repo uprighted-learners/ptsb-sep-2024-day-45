@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
 
 require('dotenv').config();
 
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 8080;
 
 // middleware
 app.use(express.json());
+app.use(cors());
 
 // 8. authentication middleware
 const authMiddleware = async (req, res, next) => {
