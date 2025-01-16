@@ -13,6 +13,9 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json());
 app.use(cors());
 
+// server production build in "/client/dist" folder
+app.use(express.static("client/dist"))
+
 // 8. authentication middleware
 const authMiddleware = async (req, res, next) => {
     try {
