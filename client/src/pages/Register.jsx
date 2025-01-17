@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
+import ThemeToggle from '../components/ThemeToggle'
 
 export default function Register() {
     const navigate = useNavigate();
@@ -56,6 +57,10 @@ export default function Register() {
                 <button type="submit">Register</button>
             </form>
             <p>{message}</p>
+
+            <div style={{ marginTop: "20px" }}>
+                <ThemeToggle />
+            </div>
         </div>
     );
 }

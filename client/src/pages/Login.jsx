@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
+import { ThemeContext } from '../context/ThemeContext'
+import ThemeToggle from '../components/ThemeToggle'
 
 export default function Login() {
     const navigate = useNavigate();
@@ -9,6 +11,11 @@ export default function Login() {
         password: "",
     });
     const [message, setMessage] = useState("");
+
+    const { theme, toggleTheme } = useContext(ThemeContext)
+
+    console.log("context theme from Login.jsx: ", theme);
+    console.log("context toggleTheme from Login.jsx: ", toggleTheme);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -59,6 +66,11 @@ export default function Login() {
 
                 <button type="submit">Login</button>
             </form>
+            {message && <p>{message}</p>}
+
+            <div style={{ marginTop: "20px" }}>
+                <ThemeToggle />
+            </div>
         </div>
     )
 }

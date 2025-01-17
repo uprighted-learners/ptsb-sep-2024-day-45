@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ThemeToggle from '../components/ThemeToggle'
 
 export default function Home() {
     return (
@@ -11,6 +12,10 @@ export default function Home() {
             <Link to="/register">Register</Link>
             <br />
             <Link to="/protected">Protected</Link>
+
+            <div style={{ marginTop: "20px" }}>
+                <ThemeToggle />
+            </div>
         </div>
     )
 }
